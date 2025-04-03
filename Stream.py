@@ -1,7 +1,9 @@
 import streamlit as st
 import fitz  # PyMuPDF
 
-st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14bSWA3akUYXe-VV04Nw2K0QnQCwCV9SG8g&s", use_container_width=True)
+st.set_page_config(page_title="Buscador de palabras FRM", page_icon="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14bSWA3akUYXe-VV04Nw2K0QnQCwCV9SG8g&s")
+st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14bSWA3akUYXe-VV04Nw2K0QnQCwCV9SG8g&s", width=250)
+st.title("Buscador de palabras FRM")
 
 def buscar_palabras_clave(pdf_file, palabras_clave):
     doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
@@ -16,8 +18,6 @@ def buscar_palabras_clave(pdf_file, palabras_clave):
                 resultados[palabra].append(num_pagina + 1)
     
     return resultados
-
-st.title("Buscador de Palabras Clave en PDF")
 
 pdf_file = st.file_uploader("Sube un archivo PDF", type=["pdf"])
 palabra_input = st.text_input("Ingresa una o más palabras clave (separadas por comas)")
@@ -35,4 +35,5 @@ if pdf_file and palabra_input:
 
 st.markdown("---")
 st.markdown("### Financial Risk Management - Franco Olivares")
+
 
