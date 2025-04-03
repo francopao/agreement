@@ -1,7 +1,7 @@
 import streamlit as st
 import fitz  # PyMuPDF
 
-st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14bSWA3akUYXe-VV04Nw2K0QnQCwCV9SG8g&s", use_column_width=True, width=250)
+st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14bSWA3akUYXe-VV04Nw2K0QnQCwCV9SG8g&s", use_container_width=True)
 
 def buscar_palabras_clave(pdf_file, palabras_clave):
     doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
@@ -35,3 +35,4 @@ if pdf_file and palabra_input:
 
 st.markdown("---")
 st.markdown("### Financial Risk Management - Franco Olivares")
+
